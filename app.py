@@ -40,16 +40,6 @@ def get_score():
         match2_team_2_det = match2.find_all('div', class_="cb-ovr-flo")[4].text.strip()
         match2_link = url + match2.find("a", {"class": "cb-lv-scrs-well"}).get("href").strip()
 
-        match3 = match[2]
-        match3_league = match3.find_all('h2', class_="cb-lv-grn-strip text-bold cb-lv-scr-mtch-hdr")[0].text.strip()
-        match3_teams = match3.find_all('h3', class_="cb-lv-scr-mtch-hdr inline-block")[0].text.strip()
-        match3_no = match3.find_all('span', class_="text-gray")[0].text.strip()
-        match3_venue = match3.find_all('span', class_="text-gray")[1].text.strip()
-        match3_team_1 = match3.find_all('div', class_="cb-ovr-flo cb-hmscg-tm-nm")[0].text.strip()
-        match3_team_1_det = match3.find_all('div', class_="cb-ovr-flo")[2].text.strip()
-        match3_team_2 = match3.find_all('div', class_="cb-ovr-flo")[3].text.strip()
-        match3_team_2_det = match3.find_all('div', class_="cb-ovr-flo")[4].text.strip()
-        match3_link = url + match3.find("a", {"class": "cb-lv-scrs-well"}).get("href").strip()
 
         return {
             "match_1": {
@@ -73,17 +63,6 @@ def get_score():
                 "team_2": match2_team_2,
                 "team_2_det": match2_team_2_det,
                 "link": match2_link
-            },
-            "match_3": {
-                "league": match3_league,
-                "teams": match3_teams,
-                "no": match3_no,
-                "venue": match3_venue,
-                "team_1": match3_team_1,
-                "team_1_det": match3_team_1_det,
-                "team_2": match3_team_2,
-                "team_2_det": match3_team_2_det,
-                "link": match3_link
             },
         }
 
